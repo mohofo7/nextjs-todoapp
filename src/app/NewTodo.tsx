@@ -1,15 +1,16 @@
 "use client";
 
-import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useRouter } from 'next/navigation';
 import * as Yup from 'yup';
-import '../../styles/todo.css';
+import '../styles/todo.css';
 
-async function addTodo(name: string) {
-  await axios.post(`/api/todo/add`, {
-    body: JSON.stringify({ name })
+async function addTodo(name: string, refresh: () => void) {
+  await fetch(`http://127.0.0.1:3000/api/todo/add`, {
+    method: "POST",
+    body: JSON.stringify({ name }),
   });
+  refresh();
 }
 
 const NewTodo = () => {
@@ -18,8 +19,7 @@ const NewTodo = () => {
     <Formik
       initialValues={{ name: "" }}
       onSubmit={async values => {
-        await addTodo(values.name);
-        refresh();
+        await addTodo(values.name, refresh);
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()

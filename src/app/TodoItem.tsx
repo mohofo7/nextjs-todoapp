@@ -1,19 +1,21 @@
 "use client";
 
 import { TodoI } from "@/types";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 
 async function updateTodo(id: string, isDone: boolean, refresh: () => void) {
-  await axios.post(`/api/todo/update`, {
+  await fetch(`http://127.0.0.1:3000/api/todo/update`, {
+    method: 'POST',
     body: JSON.stringify({ id, isDone })
   });
   refresh();
 }
 
 async function deleteTodo(id: string, refresh: () => void) {
-  await axios.delete(`/api/todo/delete?id=${id}`);
+  await fetch(`http://127.0.0.1:3000/api/todo/delete?id=${id}`, {
+    method: 'DELETE'
+  });
   refresh();
 }
 
