@@ -1,5 +1,5 @@
 export interface TodoI {
   id: string;
-  name: string;
+  title: string;
   isDone: boolean;
 }

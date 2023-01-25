@@ -1,4 +1,7 @@
-/* eslint-disable @next/next/no-head-element */
+"use client";
+
+import { Providers } from '../providers';
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function RootLayout({
   children,
@@ -7,10 +10,15 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head></head>
+      <head>
+        <title>Todo App</title>
+      </head>
       <body>
-        <h1>Awesome Todo App</h1>
-        {children}
+        <Providers>
+          <ChakraProvider>
+            {children}
+          </ChakraProvider>
+        </Providers>
       </body>
     </html>
   );
