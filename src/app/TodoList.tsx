@@ -5,7 +5,6 @@ import { Button } from '@chakra-ui/react';
 
 import { useAppDispatch, useAppSelector } from '@/state/hooks';
 import { removeAll } from '@/features/todo';
-import { Flex } from '@chakra-ui/react';
 
 const TodoList = () => {
 
@@ -19,7 +18,7 @@ const TodoList = () => {
       ))}
 
       {todos.length > 1 &&
-        <Button onClick={() => dispatch(removeAll())} colorScheme="teal" mb={6}>
+        <Button mt={4} onClick={() => dispatch(removeAll())} colorScheme="teal" mb={6}>
           Delete All
         </Button>}
     </>
