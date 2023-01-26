@@ -29,7 +29,7 @@ const TodoItem: FC<{ todo: TodoI }> = ({ todo }) => {
         onClick={updateTodo}
         checked={todo.isDone}
         gap={2}>
-        <Text noOfLines={1} onDoubleClick={() => {
+        <Text noOfLines={1} maxWidth={380} onDoubleClick={() => {
           const newTitle = prompt("New title:", todo.title);
           if (newTitle) {
             updateTodo(newTitle);
