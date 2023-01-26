@@ -2,7 +2,8 @@
 
 import { FC } from "react";
 
-import { Checkbox, Button, Flex, Text } from '@chakra-ui/react'
+import { Checkbox, Button, Flex, Text, IconButton } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 import { remove, update } from "@/features/todo";
 import { useAppDispatch } from "@/state/hooks";
@@ -36,11 +37,14 @@ const TodoItem: FC<{ todo: TodoI }> = ({ todo }) => {
           }
         }}>{todo.title}</Text>
       </Checkbox>
-      <Button colorScheme='red' onClick={() => dispatch(remove({
-        id: todo.id
-      }))}>
-        Delete
-      </Button>
+      <IconButton
+        colorScheme='red'
+        aria-label='Search database'
+        onClick={() => dispatch(remove({
+          id: todo.id
+        }))}
+        icon={<DeleteIcon />}
+      />
     </Flex>)
 }
 
