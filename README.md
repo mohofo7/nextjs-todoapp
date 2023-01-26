@@ -1,12 +1,8 @@
 # Todo App with Next.js 13
 
-## [Live](https://next-todo-app-indol.vercel.app/)
-
-<img src="./preview.gif" />
-
 ## Introduction
 
-A basic Todo App created in Next.js 13.
+A basic Todo App created in Next.js 13. You can view the demo [here](https://next-todo-app-indol.vercel.app/).
 
 ## Setup
 
