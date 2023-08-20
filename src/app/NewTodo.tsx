@@ -39,6 +39,7 @@ const NewTodo = () => {
           <Input
             name="title"
             id="title"
+            data-test={'title'}
             placeholder="Enter todo title"
             value={values.title}
             onChange={handleChange}
@@ -59,10 +60,11 @@ const NewTodo = () => {
               onClick={handleReset}
               disabled={!dirty || isSubmitting}
               value="Reset"
+              data-test={'clear'}
             >
               Reset
             </Button>
-            <Button colorScheme="teal" type="submit">
+            <Button colorScheme="teal" type="submit" data-test={'submit'}>
               Submit
             </Button>
           </Flex>

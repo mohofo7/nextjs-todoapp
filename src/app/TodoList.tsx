@@ -18,7 +18,7 @@ const TodoList = () => {
       ))}
 
       {todos.length > 1 &&
-        <Button mt={4} onClick={() => dispatch(removeAll())} colorScheme="teal" mb={6}>
+        <Button mt={4} onClick={() => dispatch(removeAll())} colorScheme="teal" mb={6} data-test={'remove-all'}>
           Delete All
         </Button>}
     </>

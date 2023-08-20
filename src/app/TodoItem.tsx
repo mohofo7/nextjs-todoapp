@@ -25,7 +25,7 @@ const TodoItem: FC<{ todo: TodoI }> = ({ todo }) => {
   }
 
   return (
-    <Flex justifyContent="space-between" gap={4} padding={1} marginTop={2}>
+    <Flex justifyContent="space-between" gap={4} padding={1} marginTop={2} data-test={'list-item'}>
       <Checkbox
         onClick={updateTodo}
         checked={todo.isDone}
@@ -44,6 +44,7 @@ const TodoItem: FC<{ todo: TodoI }> = ({ todo }) => {
           id: todo.id
         }))}
         icon={<DeleteIcon />}
+        data-test={'delete-btn'}
       />
     </Flex>)
 }
