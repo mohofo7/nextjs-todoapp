@@ -36,3 +36,4 @@
 //   }
 // }
 import "@cypress-audit/pa11y/commands";
+import "@cypress-audit/lighthouse/commands";

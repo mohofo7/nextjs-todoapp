@@ -1,5 +1,6 @@
 import { defineConfig } from "cypress";
-const { pa11y, prepareAudit } = require("@cypress-audit/pa11y");
+const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const { pa11y } = require("@cypress-audit/pa11y");
 
 
 export default defineConfig({
@@ -12,7 +13,8 @@ export default defineConfig({
       });
 
       on("task", {
-        pa11y: pa11y(),
+        lighthouse: lighthouse(),
+        pa11y: pa11y(console.log.bind(console)),
       });
     },
   },
