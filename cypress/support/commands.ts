@@ -35,3 +35,4 @@
 //     }
 //   }
 // }
+import "@cypress-audit/pa11y/commands";
