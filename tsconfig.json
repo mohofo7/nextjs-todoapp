@@ -39,6 +39,9 @@
     "src/providers.jsx"
   ],
   "exclude": [
-    "node_modules"
+    "./cypress.config.ts",
+    "node_modules",
+    "cypress",
+    "**/*.cy.ts"
   ]
 }
